@@ -1,0 +1,25 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB  #设置单个文件的大小,
+      max-request-size: 1000MB  #单次请求的文件的总大小
+  datasource:
+    druid:
+      primary:
+        Url: jdbc:mysql://rm-2ze090d2dtk3i2osi.mysql.rds.aliyuncs.com:3306/dc?useSSL=false&characterEncoding=UTF-8&useUnicode=true&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+        username: dcslave
+        password: S5hbvhzJho4FWYTw
+        type: com.alibaba.druid.pool.DruidDataSource
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
